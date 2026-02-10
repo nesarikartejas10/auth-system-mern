@@ -7,7 +7,11 @@ export const validate = (schema) => {
       return res.status(400).json({
         success: false,
         message: "Validation error",
-        error: error.errors,
+        errors: error.issues.map((issue) => ({
+          field: issue.path.join("."),
+          message: issue.message,
+          code: issue.code,
+        })),
       });
     }
   };
