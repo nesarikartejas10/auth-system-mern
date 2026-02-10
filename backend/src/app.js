@@ -2,6 +2,8 @@ import express from "express";
 import userRouter from "./routes/user.routes.js";
 import globalErrorHandler from "./middlewares/globalErrorHandler.js";
 import mongoSanitize from "express-mongo-sanitize";
+import { validate } from "./middlewares/validate.js";
+import { registerSchema } from "./config/zod.js";
 
 const app = express();
 
@@ -14,7 +16,7 @@ app.use(
 );
 
 //routes
-app.use("/api/v1/auth", userRouter);
+app.use("/api/v1/auth",validate(registerSchema), userRouter);
 
 //global error middleware
 app.use(globalErrorHandler);
