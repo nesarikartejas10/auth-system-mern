@@ -19,13 +19,21 @@ const userSchema = new mongoose.Schema(
       required: true,
     },
 
-    role: {
-      type: String,
-      enum: ["user", "admin"],
-      default: "user",
+    lastLogin: {
+      type: Date,
+      default: Date.now,
     },
+
+    isverified: {
+      type: Boolean,
+      default: false,
+    },
+    resetPasswordToken: String,
+    resetPasswordTokenExpiresAt: Date,
+    verificationToken: String,
+    verificationTokenExpiresAt: Date,
   },
-  { timestampstrue },
+  { timestamps: true },
 );
 
 export const User = mongoose.model("User", userSchema);

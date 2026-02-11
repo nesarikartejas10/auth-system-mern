@@ -1,13 +1,12 @@
 import asyncHandler from "../middlewares/asyncHandler.js";
-import sanitize from "mongo-sanitize";
 
 const registerUser = asyncHandler(async (req, res, next) => {
-  const { name, email, password } = sanitize(req.body);
+  const { name, email, password } = req.body;
 
   res.status(201).json({
     user: { name, email },
     success: true,
-    massage: "User registered successfully",
+    message: "User registered successfully",
   });
 });
 

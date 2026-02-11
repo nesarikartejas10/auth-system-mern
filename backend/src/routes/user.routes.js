@@ -1,10 +1,8 @@
 import express from "express";
 import { registerUser } from "../controllers/user.controller.js";
-import { validate } from "../middlewares/validate.js";
-import { registerSchema } from "../config/zod.js";
 
 const router = express.Router();
 
-router.post("/register", validate(registerSchema), registerUser);
+router.post("/register", registerUser);
 
 export default router;
