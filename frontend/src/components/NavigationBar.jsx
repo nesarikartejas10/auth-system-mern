@@ -6,11 +6,13 @@ import {
   NavbarBrand,
   NavbarToggle,
 } from "flowbite-react";
+import { SiAegisauthenticator } from "react-icons/si";
 
 const NavigationBar = () => {
   return (
     <Navbar fluid rounded>
       <NavbarBrand href="https://flowbite-react.com">
+        <SiAegisauthenticator className="text-2xl mr-2 dark:text-white" />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
           SecureAuth
         </span>
