@@ -45,14 +45,14 @@ const Register = () => {
           />
         </div>
 
-        <Button type="submit" className="font-bold">
-          Register new account
+        <Button type="submit" className="font-bold cursor-pointer" color="cyan">
+          Create an account
         </Button>
       </form>
 
       <div className="text-center pt-5">
-        <span>Already have an account?</span>
-        <Link to="/login" className="ml-2 text-blue-800 hover:underline">
+        <span>You already have an account?</span>
+        <Link to="/login" className="ml-2 text-cyan-800 hover:underline">
           Login
         </Link>
       </div>
