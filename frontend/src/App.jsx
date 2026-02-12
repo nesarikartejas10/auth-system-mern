@@ -1,9 +1,11 @@
-import { Button } from "flowbite-react";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Button>Click</Button>
+      <Routes>
+        <Route />
+      </Routes>
     </>
   );
 }
