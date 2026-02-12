@@ -1,12 +1,13 @@
-import { SiAegisauthenticator } from "react-icons/si";
+import { FaTableCellsRowUnlock } from "react-icons/fa6";
 import { Button, Checkbox, Label } from "flowbite-react";
 import CustomInput from "../components/common/CustomInput";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
     <>
-      <div className="flex flex-col items-center gap-4">
-        <SiAegisauthenticator className="text-5xl" />
+      <div className="flex flex-col items-center gap-2">
+        <FaTableCellsRowUnlock className="text-5xl" />
         <h1 className="text-2xl font-bold mb-10">Login</h1>
       </div>
 
@@ -30,6 +31,13 @@ const Login = () => {
           Login
         </Button>
       </form>
+
+      <div className="text-center pt-5">
+        <span>You don't have an account?</span>
+        <Link to="/register" className="ml-2 text-blue-800 hover:underline">
+          Register
+        </Link>
+      </div>
     </>
   );
 };
