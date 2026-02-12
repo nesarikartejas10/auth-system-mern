@@ -2,9 +2,10 @@ import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
   {
-    name: {
+    username: {
       type: String,
       required: true,
+      unique: true,
     },
 
     email: {
@@ -19,19 +20,21 @@ const userSchema = new mongoose.Schema(
       required: true,
     },
 
-    lastLogin: {
-      type: Date,
-      default: Date.now,
-    },
-
     isverified: {
       type: Boolean,
       default: false,
     },
-    resetPasswordToken: String,
-    resetPasswordTokenExpiresAt: Date,
-    verificationToken: String,
-    verificationTokenExpiresAt: Date,
+
+    isLoggedIn: {
+      type: Boolean,
+      default: false,
+    },
+
+    token: { type: String, default: null },
+
+    otp: { type: String, default: null },
+
+    otpExpiry: { type: Date, default: null },
   },
   { timestamps: true },
 );
